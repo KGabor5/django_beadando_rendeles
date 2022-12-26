@@ -1,0 +1,16 @@
+{% extends 'rendeles/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h1>{{ post.rendelt_termek }}</h1>
+        <p>{{ post.lakcim|linebreaksbr }}</p>
+        <p>{{ post.megjegyzes|linebreaksbr }}</p>
+        <p>{{ post.fzetes_modja|linebreaksbr }}</p>
+    </div>
+{% endblock %}
